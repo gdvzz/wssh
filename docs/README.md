@@ -1,18 +1,20 @@
 # 用 Github + Markdown 创建个人网站
 
-本文档描述如何通过 Github + Markdown 创建网站。大致步骤如下：
+本文档描述如何通过 Github + Markdown 创建网站。
+
+大致步骤如下：
 1. 在 github 上创建 **账号 account**。已有账号了，可跳过此步骤。以下以账号 gdvzz 为例。
 <!--  -->
 2. 在 github 账号下新建 **仓库 repository**，用于存放网站的文档、图片等内容。以下以仓库 wsdemo 为例。
 <!--  -->
 3. 在 github 账号下添加 **SSH key**（以保证只有你能更新网站的内容）：
-    - 在本地电脑生成 SSH key
-    - 在本地电脑配置 github 主机信息
-    - 在本地电脑测试是否能通过 ssh 连接到 github 账号
+  - 在本地电脑生成 SSH key
+  - 在本地电脑配置 github 主机信息
+  - 在本地电脑测试是否能通过 ssh 连接到 github 账号
 <!--  -->
 4. 在本地电脑配置 github 仓库信息（以便从本地电脑不断更新网站内容）：
-    - 初始化本地电脑目录
-    - 配置 github 仓库信息
+  - 初始化本地电脑目录
+  - 配置 github 仓库信息
 
 ## 网站效果
 
@@ -30,7 +32,27 @@
 
 ## 在 github 账号下添加 SSH key
 
+需要在 github 账号下添加 ssh key，以保证只有授权用户才能更新网站内容。
+
+### 生成 ssh key
+
+根据参考资料 [^1]，执行如下命令，生成新的 key。命令中的 `"gdvzz@outlook.com"`，请换成你自己的邮箱（一般是用于注册 github 账号的邮箱）。
+
+```bash
+~/gdvzz/wsdemo % ssh-keygen -t ed25519 -C "gdvzz@outlook.com"
+Generating public/private ed25519 key pair.
+Enter file in which to save the key (/Users/george1442/.ssh/id_ed25519): id_ed25519_gdvzz_olk
+Enter passphrase (empty for no passphrase): 
+Enter same passphrase again: 
+Your identification has been saved in id_ed25519_gdvzz_olk
+Your public key has been saved in id_ed25519_gdvzz_olk.pub
+The key fingerprint is:
+SHA256:... gdvzz@outlook.com
+The key's randomart image is:
+...
 ```
+
+```bash
 # github - gdvzz@outlook.com
 Host githubvzz.com
   HostName github.com
@@ -85,3 +107,9 @@ branch 'master' set up to track 'origin/master'.
 ## 其他说明
 
 1、校园网内访问 github，时灵时不灵。当连接不上时，可尝试断开校园网的 wifi 后再重连，一般就可以了。本文档涉及的 github 相关操作，都是连校园网的 wifi 完成的。
+
+2、校园网内可访问演示网站 `https://gdvzz.github.io/wsdemo/`。如果是手机 5G 网络访问，可能无法访问。
+
+## 参考资料
+
+[^1]: [Generating a new SSH key and adding it to the ssh-agent](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent), Github Docs
