@@ -153,7 +153,7 @@ Initialized empty Git repository in /Users/george1442/gdvzz/wsdemo/.git/
 ~/gdvzz/wsdemo % git push -u origin master
 ```
 
-> git remote add origin <git信息>，其中 <git信息> 请改成自己的 git 信息。
+> `git remote add origin <git信息>`，其中 `<git信息>` 请改成自己的 git 信息。
 
 <br>
 上述相关命令，参考了仓库新建完毕的提示页面（如下所示）：
@@ -189,7 +189,6 @@ Initialized empty Git repository in /Users/george1442/gdvzz/wsdemo/.git/
 ~/gdvzz/wsdemo % git commit -m "update readme"
 ~/gdvzz/wsdemo % git push origin
 ```
-
 
 ## 其他说明
 
